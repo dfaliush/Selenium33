@@ -26,9 +26,9 @@ public class MainClass {
 //        methods.printStringSeveralTimes("bla1", 10);
 //        System.out.println(methods.sumMinAndMaxfrom3(589));
 //        System.out.println(methods.areaOfTriangle(1,1,1));
-//        System.out.println(methods.areaOfRegularHexagon(1));
+        System.out.println(methods.areaOfRegularHexagon(2));
 //        System.out.println(methods.sumOfOddfactorialFrom1To9());
 //        System.out.println(methods.priceWithDiscount(5005));
-
+//        System.out.println(methods.areaOfEquilateralTriangle(1));
     }
 }

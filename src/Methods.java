@@ -24,10 +24,6 @@ public class Methods {
             return y;
     }
 
-    /**
-     *
-     */
-
     boolean isTheSameNumbersPresent() {
         System.out.println("Please, input a three-digit integer: ");
         Scanner s = new Scanner(System.in);
@@ -66,6 +62,16 @@ public class Methods {
     }
 
     public boolean isTriangleExists(double x, double y, double z){
+        /* Написать буленовский метод принимающий на вход 3 переменных типа int
+        которые обозначают длину стороны для треугольника и возвращает правда
+        или ложь (может ли существовать треугольник с заданными сторонами)
+        Вспоминаем свойство треугольника ни одна сторона не должна быть
+        длиннее суммы двух других
+         */
+        if (x <= 0 || y <= 0 || z <= 0){
+            System.out.println("please input a value > 0");
+            return false;
+        }
         return x + y > z && x + z > y && z + y > x;
     }
 
@@ -138,6 +144,8 @@ public class Methods {
     }
 
     public double areaOfTriangle(double x, double y, double z){
+        // S = sqrt( P/2(P/2 -x)(P/2 -y)(P/2 -z));
+        // P = x + y + z;
 
         if (isTriangleExists(x, y, z)){
             double halfOfThePerimetr = (x + y + z) /2;
@@ -147,7 +155,18 @@ public class Methods {
             System.out.println("triangle isn't exist");
             return 0;
         }
+    }
 
+    public double areaOfEquilateralTriangle(double x){
+
+        if (isTriangleExists(x, x, x)){
+            double halfOfThePerimetr = (x + x + x) /2;
+            double areaOfTriangle1 = Math.sqrt(halfOfThePerimetr * (halfOfThePerimetr -x) *(halfOfThePerimetr -x) * (halfOfThePerimetr - x));
+            return areaOfTriangle1;
+        }else {
+            System.out.println("triangle isn't exist");
+            return 0;
+        }
     }
 
     public double areaOfRegularHexagon(double a){
@@ -162,7 +181,6 @@ public class Methods {
                 double valueOfFactorial = 1;
                 for (int k=1; k < i; k++){
                     valueOfFactorial *= k;
-
                 }
                 sumOfTheOddFactorial += valueOfFactorial;
             }
@@ -184,8 +202,6 @@ public class Methods {
             throw new AssertionError("some trouble with price");
         }
     }
-
-
 }
 
 
