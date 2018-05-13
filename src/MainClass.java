@@ -34,10 +34,13 @@ public class MainClass {
 
         methods.fillArray(masiv4ik);
 
-        methods.sumOfElementsDivisibleByNumber(masiv4ik, 3);
+        int[] arr = new int[]{1,2,4,5,6};
+
+//        methods.sumOfElementsDivisibleByNumber(masiv4ik, 3);
 //        System.out.println(methods.sumOfElementsMaxMin(masiv4ik));
 //        System.out.println(methods.resultOfMultipleElementsWhichBiggerThanNumber(masiv4ik, 75));
-
+//        System.out.println(methods.isSortedArray(masiv4ik));
+        System.out.println(methods.isSortedArray(arr));
     }
 
 }

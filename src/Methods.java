@@ -280,6 +280,26 @@ public class Methods {
             return -1;
         }
     }
+
+    /**
+     * Дан массив чисел. Выяснить, отсортирован ли он по возрастанию.
+     * @param arr
+     * @return
+     */
+    public boolean isSortedArray(int[] arr){
+
+        int l = arr.length;
+//        int currentValue = 0;
+        boolean flag = true;
+        for (int i = 1; i < l; i++){
+
+            if (arr[i - 1] > arr[i]){
+                flag = false;
+                return flag;
+            }
+        }
+        return flag;
+    }
 }
 
 
