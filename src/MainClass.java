@@ -2,6 +2,7 @@ public class MainClass {
     public static void main(String[] args) {
 
         Methods methods = new Methods();
+        int[] masiv4ik = new int[8];
 
         int c = methods.sumTwoNumbers(5, 7);
         int d = methods.sumTwoNumbers(10, 11);
@@ -26,9 +27,17 @@ public class MainClass {
 //        methods.printStringSeveralTimes("bla1", 10);
 //        System.out.println(methods.sumMinAndMaxfrom3(589));
 //        System.out.println(methods.areaOfTriangle(1,1,1));
-        System.out.println(methods.areaOfRegularHexagon(2));
+//        System.out.println(methods.areaOfRegularHexagon(2));
 //        System.out.println(methods.sumOfOddfactorialFrom1To9());
 //        System.out.println(methods.priceWithDiscount(5005));
 //        System.out.println(methods.areaOfEquilateralTriangle(1));
+
+        methods.fillArray(masiv4ik);
+
+        methods.sumOfElementsDivisibleByNumber(masiv4ik, 3);
+//        System.out.println(methods.sumOfElementsMaxMin(masiv4ik));
+//        System.out.println(methods.resultOfMultipleElementsWhichBiggerThanNumber(masiv4ik, 75));
+
     }
+
 }

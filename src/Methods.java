@@ -1,4 +1,6 @@
 import org.junit.Assert;
+
+import java.util.Random;
 import java.util.Scanner;
 
 public class Methods {
@@ -200,6 +202,82 @@ public class Methods {
             return price * 0.93;
         }else {
             throw new AssertionError("some trouble with price");
+        }
+    }
+
+    public int[] fillArray(int[] mass){
+        /*Заполнение масива рандомными числами до 100*/
+        int lengthOfArray = mass.length;
+        Random random = new Random();
+        for(int i = 0; i < lengthOfArray; i++){
+            mass[i] = random.nextInt(100);
+            System.out.print(mass[i] + " ");
+        }
+        System.out.println("");
+        return mass;
+    }
+
+    public int sumOfElementsDivisibleByNumber(int[] massiv, int k){
+        /*Дан целочисленный массив чисел.
+        Найти сумму элементов, кратных данному числу K.*/
+        int sumOfElements = 0;
+
+        int lengthOfArray = massiv.length;
+        for(int i = 0; i < lengthOfArray; i++){
+
+            if (massiv[i] % k == 0) {
+                sumOfElements += massiv[i];
+            }
+        }
+        System.out.println(sumOfElements);
+        return sumOfElements;
+    }
+
+
+    public int sumOfElementsMaxMin(int[] mass){
+        /*Дан массив чисел.
+        Найти  mаx(а[0], а[2], ..., а[2к]) + min(а[1], а[3], …, а[2к-1]).*/
+        int arrayLenght = mass.length;
+        int maxElem = mass[0];
+        int minOddElem = mass[1];
+
+        for (int i = 2; i < arrayLenght; i++){
+            if (i % 2 == 0){
+                if (maxElem < mass[i]){
+                    maxElem = mass[i];
+                }
+            } else {
+                if (minOddElem > mass[i]){
+                    minOddElem = mass[i];
+                }
+            }
+        }
+        return minOddElem + maxElem;
+    }
+
+
+    /**
+     * Дан массив целых положительных чисел.
+     * Найти произведение только тех чисел, которые больше
+     заданного числа М. Если таких нет, то выдать сообщение об этом.
+     * @return
+     */
+    public long resultOfMultipleElementsWhichBiggerThanNumber(int[] array, int m){
+
+        long result = 1;
+        boolean flag = false;
+        int lenght = array.length;
+        for (int i=0; i < lenght; i++){
+            if (array[i] > m){
+                result *= array[i];
+                flag = true;
+            }
+        }
+
+        if (flag){
+            return result;
+        }else {
+            return -1;
         }
     }
 }
