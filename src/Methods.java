@@ -421,8 +421,6 @@ public class Methods {
         int l = arr.length;
         int maxValue = arr[arr.length -1];
         int minValue = arr[0];
-        List listWithReplacing = new ArrayList();
-
 
         for (int i = 0; i < l; i++){
             if (arr[i] > maxValue){
