@@ -35,12 +35,19 @@ public class MainClass {
         methods.fillArray(masiv4ik);
 
         int[] arr = new int[]{1,2,4,5,6};
+        int[] mass = {-1,0,3,4,5,6,0};
 
 //        methods.sumOfElementsDivisibleByNumber(masiv4ik, 3);
 //        System.out.println(methods.sumOfElementsMaxMin(masiv4ik));
 //        System.out.println(methods.resultOfMultipleElementsWhichBiggerThanNumber(masiv4ik, 75));
 //        System.out.println(methods.isSortedArray(masiv4ik));
-        System.out.println(methods.isSortedArray(arr));
+//        System.out.println(methods.isSortedArray(arr));
+//        System.out.println(methods.isSortedArray(mass));
+//        System.out.println(methods.indexesOfZeroInArray(mass));
+//        System.out.println(methods.positiveOrNegativeIsTheFirst(mass));
+//        System.out.println(methods.replacingSmallerNumberThanKOnK(mass, 3));
+//        System.out.println(methods.positiveNegativeZeroCounter(mass));
+        System.out.println(methods.changePlacesMaxAndMin(mass));
     }
 
 }

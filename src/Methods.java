@@ -1,5 +1,7 @@
 import org.junit.Assert;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -300,6 +302,151 @@ public class Methods {
         }
         return flag;
     }
+
+    /**
+     * В целочисленном массиве есть нулевые элементы.
+     * Создать массив из номеров этих элементов.
+     * @param array
+     * @return
+     */
+    public List indexesOfZeroInArray(int[] array){
+        List listOfIndexes = new ArrayList();
+        int l = array.length;
+        for (int i = 0; i < l; i++){
+
+            if (array[i] == 0){
+                listOfIndexes.add(i);
+            }
+        }
+        return listOfIndexes;
+    }
+
+    /**
+     * Выяснить, какое число встречается раньше в массиве
+     * – положительное или отрицательное.
+     * @param arr
+     * @return
+     */
+    public String positiveOrNegativeIsTheFirst(int[] arr){
+        String theFirst = "";
+
+        if (arr[0] >= 0){
+            theFirst = "positive";
+        }else {
+            theFirst =  "negative";
+        }
+    return theFirst;
+    }
+
+
+    /**
+     * Дан массив чисел. Создать массив из четных чисел этого массива.
+     * Если таких чисел нет, то вывести сообщение об этом факте.
+     * @param array
+     * @return
+     */
+    public List evenNumbersFromArray(int[] array){
+        List listOfevenNumbers = new ArrayList();
+        int l = array.length;
+        for (int i = 0; i < l; i++){
+
+            if (array[i] % 2 == 0){
+                listOfevenNumbers.add(array[i]);
+            }
+        }
+        return listOfevenNumbers;
+    }
+
+    /**
+     * Дан массив чисел. Заменить все его элементы, большие данного числа Z,
+     * этим числом. Подсчитать количество замен.
+     * @param array
+     * @param k
+     * @return
+     */
+    public List replacingSmallerNumberThanKOnK(int[] array, int k){
+        List listWithReplacing = new ArrayList();
+        int l = array.length;
+        int counter = 0;
+        for (int i = 0; i < l; i++){
+
+            if (array[i] > k){
+                listWithReplacing.add(k);
+                counter ++;
+            }else {
+                listWithReplacing.add(array[i]);
+            }
+        }
+        System.out.println(counter);
+        return listWithReplacing;
+    }
+
+    /**
+     * Дан массив чисел. Подсчитать, сколько в нем отрицательных,
+     * положительных и нулевых элементов.
+     * @param arr
+     * @return
+     */
+    public String positiveNegativeZeroCounter(int[] arr){
+        String positive = "positive: ";
+        String negative = "negative: ";
+        String zero = "zero: ";
+
+        int positiveCounter = 0;
+        int negativeCounter = 0;
+        int zeroCounter = 0;
+
+        int l = arr.length;
+        for (int i = 0; i < l; i++){
+
+            if (arr[i] > 0){
+                positiveCounter ++;
+            }else if (arr[i] < 0){
+                negativeCounter ++;
+            }else
+                zeroCounter ++;
+        }
+        return positive + String.valueOf(positiveCounter) + "\n"
+                + negative + String.valueOf(negativeCounter) + "\n"
+                + zero + String.valueOf(zeroCounter) + "\n";
+    }
+
+    /**
+     * Дан массив чисел. Поменять местами наибольший и наименьший элементы.
+     * @param arr
+     * @return
+     */
+    public int[] changePlacesMaxAndMin(int[] arr){
+        // Допускается что в массиве есть только 1 максимальный и 1 минимальный элемент
+        int l = arr.length;
+        int maxValue = arr[arr.length -1];
+        int minValue = arr[0];
+        List listWithReplacing = new ArrayList();
+
+
+        for (int i = 0; i < l; i++){
+            if (arr[i] > maxValue){
+                maxValue = arr[i];
+            }
+
+            if (arr[i] < minValue){
+                minValue = arr[i];
+            }
+        }
+
+        //System.out.println(maxValue + " " + minValue);
+
+        for (int i = 0; i < l; i++){
+            if (arr[i] == maxValue){
+                arr[i] = minValue;
+            }else if (arr[i] == minValue){
+                arr[i] = maxValue;
+            }
+        }
+        return arr;
+    }
+
+
 }
 
 
