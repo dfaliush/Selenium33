@@ -35,7 +35,8 @@ public class MainClass {
         methods.fillArray(masiv4ik);
 
         int[] arr = new int[]{1,2,4,5,6};
-        int[] mass = {-1,0,3,4,5,6,0};
+        int[] mass = {-1,1,3,4,5,3,8, 100,101};
+        double[] mass1 = {-1,0,3,4,5,6,8};
 
 //        methods.sumOfElementsDivisibleByNumber(masiv4ik, 3);
 //        System.out.println(methods.sumOfElementsMaxMin(masiv4ik));
@@ -47,7 +48,14 @@ public class MainClass {
 //        System.out.println(methods.positiveOrNegativeIsTheFirst(mass));
 //        System.out.println(methods.replacingSmallerNumberThanKOnK(mass, 3));
 //        System.out.println(methods.positiveNegativeZeroCounter(mass));
-        System.out.println(methods.changePlacesMaxAndMin(mass));
+//        System.out.println(methods.changePlacesMaxAndMin(mass));
+//        methods.numbersSmallerThanTheirIndex(mass1);
+//        methods.remainderOfTheDivision(mass, 2 , 1);
+//        methods.changeThePosinionByOne(mass);
+//        methods.printValuesBeforeZero(mass);
+//        System.out.println(methods.sumOfElementsMaxMin(mass));
+        methods.arrayWhichEndsOnNumber(mass, 1);
+        System.out.println(methods.arrayWhichEndsOnNumber(mass, 1));;
     }
 
 }

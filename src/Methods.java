@@ -1,9 +1,8 @@
 import org.junit.Assert;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
+
+import static java.lang.Math.abs;
 
 public class Methods {
 
@@ -219,9 +218,15 @@ public class Methods {
         return mass;
     }
 
+    /**
+     * 2.Дан целочисленный массив чисел.
+     * Найти сумму элементов, кратных данному числу K.
+     * @param massiv
+     * @param k
+     * @return
+     */
     public int sumOfElementsDivisibleByNumber(int[] massiv, int k){
-        /*Дан целочисленный массив чисел.
-        Найти сумму элементов, кратных данному числу K.*/
+
         int sumOfElements = 0;
 
         int lengthOfArray = massiv.length;
@@ -236,6 +241,12 @@ public class Methods {
     }
 
 
+    /**
+     * 14. Дан массив чисел.
+     * Найтиmаx(а[0], а[2], ..., а[2к]) +min(а[1], а[3], …, а[2к-1]).
+     * @param mass
+     * @return
+     */
     public int sumOfElementsMaxMin(int[] mass){
         /*Дан массив чисел.
         Найти  mаx(а[0], а[2], ..., а[2к]) + min(а[1], а[3], …, а[2к-1]).*/
@@ -259,7 +270,7 @@ public class Methods {
 
 
     /**
-     * Дан массив целых положительных чисел.
+     * 15.Дан массив целых положительных чисел.
      * Найти произведение только тех чисел, которые больше
      заданного числа М. Если таких нет, то выдать сообщение об этом.
      * @return
@@ -284,7 +295,7 @@ public class Methods {
     }
 
     /**
-     * Дан массив чисел. Выяснить, отсортирован ли он по возрастанию.
+     * 5.Дан массив чисел. Выяснить, отсортирован ли он по возрастанию.
      * @param arr
      * @return
      */
@@ -304,7 +315,7 @@ public class Methods {
     }
 
     /**
-     * В целочисленном массиве есть нулевые элементы.
+     * 3.В целочисленном массиве есть нулевые элементы.
      * Создать массив из номеров этих элементов.
      * @param array
      * @return
@@ -322,7 +333,7 @@ public class Methods {
     }
 
     /**
-     * Выяснить, какое число встречается раньше в массиве
+     * 4.Выяснить, какое число встречается раньше в массиве
      * – положительное или отрицательное.
      * @param arr
      * @return
@@ -340,7 +351,7 @@ public class Methods {
 
 
     /**
-     * Дан массив чисел. Создать массив из четных чисел этого массива.
+     * 6.Дан массив чисел. Создать массив из четных чисел этого массива.
      * Если таких чисел нет, то вывести сообщение об этом факте.
      * @param array
      * @return
@@ -358,7 +369,7 @@ public class Methods {
     }
 
     /**
-     * Дан массив чисел. Заменить все его элементы, большие данного числа Z,
+     * 7.Дан массив чисел. Заменить все его элементы, большие данного числа Z,
      * этим числом. Подсчитать количество замен.
      * @param array
      * @param k
@@ -382,7 +393,7 @@ public class Methods {
     }
 
     /**
-     * Дан массив чисел. Подсчитать, сколько в нем отрицательных,
+     * 8.Дан массив чисел. Подсчитать, сколько в нем отрицательных,
      * положительных и нулевых элементов.
      * @param arr
      * @return
@@ -412,7 +423,7 @@ public class Methods {
     }
 
     /**
-     * Дан массив чисел. Поменять местами наибольший и наименьший элементы.
+     * 9.Дан массив чисел. Поменять местами наибольший и наименьший элементы.
      * @param arr
      * @return
      */
@@ -445,6 +456,147 @@ public class Methods {
     }
 
 
+    /**
+     * 10.Дан массив.
+     * Вывести на печать только те числа, для которых выполняется условие arr[i] ≤ i.
+     * @param arr
+     * @return
+     */
+    public double[] numbersSmallerThanTheirIndex(double[] arr){
+        int l = arr.length;
+
+        for (int i = 0; i < l; i++) {
+            if (arr[i] <= i) {
+                System.out.print(arr[i]+ " ");
+            }
+        }
+        System.out.println("");
+        return arr;
+    }
+
+
+    /**
+     * 11.Дан массив чисел. Вывести те числа,
+     * у которых остаток от деления на число М равен L.
+     * @param arr
+     * @return
+     */
+    public int[] remainderOfTheDivision(int[] arr, int m, int l){
+        int len = arr.length;
+
+        for (int i = 0; i < len; i++){
+            if (arr[i] % m == l){
+                System.out.print(arr[i] + " ");
+            }
+        }
+        System.out.println();
+        return  arr;
+    }
+
+    /**
+     * 12. Дан массив чисел.
+     * Поменять местами соседние элементы (а[0] и а[1], а[2] и а[3], …)
+     * @param arr
+     * @return
+     */
+    public int[] changeThePosinionByOne(int[] arr){
+        int l = arr.length;
+        for(int i=0; i < l -1 ; i +=2){
+            int temporaryResult = arr[i];
+            arr[i] = arr[i+1];
+            arr[i+1] = temporaryResult;
+
+        }
+        for (int i=0; i < l ; i++){
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+        return arr;
+    }
+
+    /**
+     * 13.Дан массив чисел, среди которых имеется один нуль.
+     * Вывести на печать все числа, включительно
+     до нуля.
+     * @param arr
+     * @return
+     */
+    public int[] printValuesBeforeZero(int[] arr){
+        int l = arr.length;
+        int zeroIndex = 0;
+        for(int i=0; i < l ; i ++){
+            if (arr[i] == 0){
+                zeroIndex = i;
+            }
+        }
+        for (int i=0; i <= zeroIndex; i++){
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+        return arr;
+    }
+
+
+    /**
+     * 16.	Дан массив положительных и отрицательных чисел.
+     * Заменить нулями те числа, величина которых по модулю
+     * больше максимального числа (|a[i]| > max{ a[0], a[1], ..., a[n]})
+     * @param mass
+     * @return
+     */
+    public int[] zeroReplacement(int[] mass){
+        int l = mass.length;
+        int maxValue = mass[0];
+        System.out.println();
+        for (int i =1; i < l; i++){
+            if (maxValue < mass[i]){
+                maxValue = mass[i];
+            }
+        }
+        for (int i =0; i < l; i++){
+            if (abs(mass[i])> maxValue){
+                mass[i] = 0;
+            }
+            System.out.print(mass[i] + " ");
+        }
+        return mass;
+    }
+
+
+    /**
+     * 19.Дан массив чисел. Образовать новый массив,
+     * элементами которого будут элементы исходного, оканчивающиеся на цифру k.
+     * @return
+     */
+    public List arrayWhichEndsOnNumber(int[] mass, int k){
+
+        int lenghtMass = mass.length;
+        List list = new ArrayList();
+        for(int i=0; i < lenghtMass; i++){
+            if (mass[i] % 10 == k || mass[i] ==k){
+                list.add(mass[i]);
+            }
+        }
+
+        /* int[] array1;
+        int counter = 0;
+        int j = 0;
+        for(int i=0; i < lenghtMass; i++){
+            if (mass[i] % 10 == k || mass[i] ==k){
+                counter += 1;
+            }
+        }
+        array1 = new int[counter];
+        for(int i=0; i < lenghtMass; i++){
+            if (mass[i] % 10 == k || mass[i] ==k){
+                array1[j] = mass[i];
+                System.out.print(array1[j] + " ");
+                j++;
+            }
+        }*/
+
+        return list;
+    }
 }
 
 
