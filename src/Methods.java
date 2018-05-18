@@ -597,6 +597,86 @@ public class Methods {
 
         return list;
     }
+
+    /**
+     * 17. Дан массив чисел с положительными и отрицательными элементы.
+     * Вычислить произведение отрицательных элементовP 1
+     * и произведение положительных элементов Р 2 . Сравнить модуль Р 2 с
+     * модулем Р 1 и указать, какое из произведений по модулю больше.
+     * @param arr
+     * @return
+     */
+    public String resultOfMultipleNegativePositive(int[] arr){
+        int resultOfMultiplePositive = 1;
+        int resultOfMultipleNegative = 1;
+
+        int l = arr.length;
+        for(int i=0; i<l; i++){
+            if (arr[i] >= 0){
+                if (arr[i] == 0){
+                    resultOfMultiplePositive =0;
+                }
+                resultOfMultiplePositive *= arr[i];
+            }else if(arr[i] < 0){
+                resultOfMultipleNegative *= arr[i];
+            }
+        }
+        if (abs(resultOfMultipleNegative) > resultOfMultiplePositive){
+            return "The biggest module is: resultOfMultipleNegative";
+        }else if (abs(resultOfMultipleNegative) < resultOfMultiplePositive){
+            return "The biggest module is: resultOfMultiplePositive";
+        }else
+            return "The modules are equels";
+    }
+
+    /**
+     * 18. Дан массив чисел. Среди них есть равные.
+     * Найти первый максимальный элемент массива и заменить его нулем.
+     * @param arr
+     * @return
+     */
+    public int[] findMaxValueInArrayreplaceOnZero(int[] arr){
+        int maxValue = 0;
+        int indexOfMaxValue= 0;
+        int l = arr.length;
+        for(int i=0; i<l; i++){
+            if(arr[i] > maxValue){
+                maxValue = arr[i];
+                indexOfMaxValue = i;
+            }
+        }
+
+        arr[indexOfMaxValue] = 0;
+        return arr;
+    }
+
+    /**
+     * Дан масив чисел. Из этого масива создать 2-3 новых масива.
+     * в первый - четные, второй - нечетные,третий - нули.
+     * может быть ситуаия, что каких-то цифр нет. например, четных.
+     * @param arr
+     */
+    public void splitArrayForPositiveNegativeZeroNumbers(int[] arr){
+        List positive = new ArrayList();
+        List negative = new ArrayList();
+        List zeros = new ArrayList();
+
+        int l = arr.length;
+        for(int i=0; i<l; i++){
+            if (arr[i] >0){
+                positive.add(arr[i]);
+            }else if(arr[i] < 0){
+                negative.add(arr[i]);
+            }else if(arr[i] == 0){
+                zeros.add(arr[i]);
+            }else {
+                System.out.println("array is empty");
+            }
+        }
+        System.out.println(positive);
+        System.out.println(negative);
+        System.out.println(zeros);
+    }
 }
 
 
