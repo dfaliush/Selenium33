@@ -4,8 +4,9 @@ public class MainClass {
         Methods methods = new Methods();
         int[] masiv4ik = new int[8];
 
-        int c = methods.sumTwoNumbers(5, 7);
-        int d = methods.sumTwoNumbers(10, 11);
+//        int c = methods.sumTwoNumbers(5, 7);
+//        int d = methods.sumTwoNumbers(10, 11);
+
 //        System.out.println("Sum of two numbers: " + methods.sumTwoNumbers(c, d));
 //        System.out.println("Max value: " + methods.maxValueOfTwo(c, d));
 //        System.out.println("Min value: " + methods.minValueOfTwo (c, d));
@@ -58,7 +59,9 @@ public class MainClass {
 //        System.out.println(methods.arrayWhichEndsOnNumber(mass, 1));
 //        System.out.println(methods.resultOfMultipleNegativePositive(mass));
 //        methods.findMaxValueInArrayreplaceOnZero(mass);
-        methods.splitArrayForPositiveNegativeZeroNumbers(mass);
+//        methods.splitArrayForPositiveNegativeZeroNumbers(mass);
+
+        System.out.println(methods.divideTwoNumbers(10000, 0));
     }
 
 }

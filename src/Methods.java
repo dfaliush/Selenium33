@@ -1,3 +1,4 @@
+import org.apache.log4j.Logger;
 import org.junit.Assert;
 
 import java.util.*;
@@ -5,18 +6,54 @@ import java.util.*;
 import static java.lang.Math.abs;
 
 public class Methods {
+    Logger log;
+
+    public Methods(){
+        log = Logger.getLogger(getClass());
+    }
 
 
     public int sumTwoNumbers(int x, int y){
+        log.info("This method return sum of two numbers");
         return x + y;
     }
 
+    public int divideTwoNumbers(int x, int y){
+
+        int c;
+        try {
+            c = x/y;
+            log.info("x / y is equal " + c);
+            return c;
+        }catch (ArithmeticException ex){
+            log.error("Something bad. AR ex.");
+            return -1;
+        }
+        catch (Exception e){
+            log.error("Something bad");
+            return -1;
+        }
+
+    }
+
+
+
     public int maxValueOfTwo(int x, int y){
         // without case x equals y
-        if(x < y){
-            return y;
-        } else
-            return x;
+        int resultNumber;
+        try {
+            if(x < y){
+                log.info("return second number");
+                resultNumber = y;
+            } else {
+                log.info("return first number");
+                resultNumber = x;
+            }
+        } catch (Exception e) {
+            log.error("something bad");
+            return -1;
+        }
+        return resultNumber;
     }
 
     public int minValueOfTwo(int x, int y){
@@ -28,17 +65,25 @@ public class Methods {
     }
 
     boolean isTheSameNumbersPresent() {
-        System.out.println("Please, input a three-digit integer: ");
-        Scanner s = new Scanner(System.in);
+        boolean isSame = false;
+        try {
+             log.info("Please, input a three-digit integer: ");
 
-        int a = Integer.parseInt(s.nextLine());
-        Assert.assertTrue( "The number consists from more than 3 digits", a / 1000 < 1);
+            Scanner s = new Scanner(System.in);
 
-        int hundreds = a / 100;
-        int tens = a % 100 / 10;
-        int units = a % 100 % 10;
+            int a = Integer.parseInt(s.nextLine());
+            Assert.assertTrue( "The number consists from more than 3 digits", a / 1000 < 1);
 
-        return hundreds == tens || hundreds == units || tens == units;
+            int hundreds = a / 100;
+            int tens = a % 100 / 10;
+            int units = a % 100 % 10;
+
+            isSame = hundreds == tens || hundreds == units || tens == units;
+        } catch (Exception e) {
+            log.error("something went wrong.");
+        }
+
+        return isSame;
     }
 
     public String findFactorialFromNumber(int number){
@@ -64,13 +109,19 @@ public class Methods {
         return Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
     }
 
+    /**
+     * Написать буленовский метод принимающий на вход 3 переменных типа int
+     которые обозначают длину стороны для треугольника и возвращает правда
+     или ложь (может ли существовать треугольник с заданными сторонами)
+     Вспоминаем свойство треугольника ни одна сторона не должна быть
+     длиннее суммы двух других
+     * @param x
+     * @param y
+     * @param z
+     * @return
+     */
     public boolean isTriangleExists(double x, double y, double z){
-        /* Написать буленовский метод принимающий на вход 3 переменных типа int
-        которые обозначают длину стороны для треугольника и возвращает правда
-        или ложь (может ли существовать треугольник с заданными сторонами)
-        Вспоминаем свойство треугольника ни одна сторона не должна быть
-        длиннее суммы двух других
-         */
+
         if (x <= 0 || y <= 0 || z <= 0){
             System.out.println("please input a value > 0");
             return false;
