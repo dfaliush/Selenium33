@@ -89,24 +89,38 @@ public class Methods {
     public String findFactorialFromNumber(int number){
         int factorial = 1;
         int counter = 1;
-        if (number == 0 || number == 1){
-            return String.valueOf(factorial);
-        }else if (number % 2 != 0){
-            return "can't calculate the factorial of " + number;
+        try {
+            if (number == 0 || number == 1){
+                return String.valueOf(factorial);
+            }else if (number % 2 != 0){
+                return "can't calculate the factorial of " + number;
 
-        }else {
-            while (number / counter != 1){
-                number = number /counter;
-                counter += 1;
-                factorial += 1;
+            }else {
+                while (number / counter != 1){
+                    number = number /counter;
+                    counter += 1;
+                    factorial += 1;
+                }
+                return String.valueOf(factorial);
             }
-            return String.valueOf(factorial);
+        } catch (Exception e) {
+            log.error("Something went wrong");
+            return "-1";
         }
 
     }
 
     public static double getDistance(int x1, int y1, int x2, int y2){
-        return Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
+        Double distance ;
+
+        try {
+            distance  = Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
+            return distance;
+        } catch (Exception e) {
+            distance = -1.0;
+            return distance;
+        }
+
     }
 
     /**

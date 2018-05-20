@@ -1,8 +1,33 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainClass {
     public static void main(String[] args) {
 
         Methods methods = new Methods();
         int[] masiv4ik = new int[8];
+
+        List chess = new ArrayList();
+
+        chess.add(new Queen());
+        chess.add(new Queen());
+        chess.add(new King());
+        chess.add(new Knight());
+
+
+        for (Object c: chess){
+            if (c instanceof ChessClass){
+                // Polimorphism
+                ChessClass chessF = (ChessClass) c;
+                try {
+                    chessF.drawChess();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+
 
 //        int c = methods.sumTwoNumbers(5, 7);
 //        int d = methods.sumTwoNumbers(10, 11);
