@@ -1,3 +1,5 @@
+import org.junit.Assert;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,12 +22,45 @@ public class MainClass {
                 // Polimorphism
                 ChessClass chessF = (ChessClass) c;
                 try {
-                    chessF.drawChess();
+//                    chessF.drawChess();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
         }
+
+        int summ = methods.sumTwoNumbers(5, 7);
+        Assert.assertEquals("IsNotEqual", 12, summ);
+        Assert.assertEquals("IsNotEqual", 13, methods.sumTwoNumbers(6, 7));
+        Assert.assertEquals("IsNotEqual", -2, methods.sumTwoNumbers(-1, -1));
+        Assert.assertEquals("IsNotEqual", 0, methods.sumTwoNumbers(-1, 1));
+        Assert.assertEquals("IsNotEqual", 0, methods.sumTwoNumbers(0, 0));
+
+
+//        methods.minValueOfTwo (5, 7);
+        Assert.assertEquals("Error detected", 5, methods.minValueOfTwo(5,7));
+        Assert.assertEquals("Error detected", -7, methods.minValueOfTwo(-5,-7));
+        Assert.assertEquals("Error detected", -7, methods.minValueOfTwo(-7,-5));
+        Assert.assertEquals("Error detected", 0, methods.minValueOfTwo(0,7));
+        Assert.assertEquals("Error detected", 1, methods.minValueOfTwo(1,1));
+
+
+
+//        methods.isTheSameNumbersPresent();
+//        Assert.assertTrue("false", methods.isTheSameNumbersPresent());
+//        Assert.assertFalse("true", methods.isTheSameNumbersPresent());
+
+
+        methods.isTriangleExists(1,2,3);
+
+        Assert.assertTrue("Triange doesn't exist", methods.isTriangleExists(2,2,1));
+        Assert.assertFalse("wrong result", methods.isTriangleExists(1,2,3));
+
+        Assert.assertEquals(2.0,  methods.areaOfEquilateralTriangle(2), 0.3);
+
+
+        Assert.assertEquals(10.392,  methods.areaOfRegularHexagon(2), 0.001);
+
 
 
 
@@ -85,8 +120,7 @@ public class MainClass {
 //        System.out.println(methods.resultOfMultipleNegativePositive(mass));
 //        methods.findMaxValueInArrayreplaceOnZero(mass);
 //        methods.splitArrayForPositiveNegativeZeroNumbers(mass);
-
-        System.out.println(methods.divideTwoNumbers(10000, 0));
+//        System.out.println(methods.divideTwoNumbers(10000, 0));
     }
 
 }
